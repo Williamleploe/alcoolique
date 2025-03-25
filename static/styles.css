@@ -1,0 +1,123 @@
+/* styles.css */
+
+/* Réinitialisation de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style général du corps */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* En-tête */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Section d'accueil */
+#accueil {
+    background-color: #efefef;
+    padding: 50px 0;
+    text-align: center;
+}
+
+#accueil h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#accueil p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Section des produits */
+#produits {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#produits h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.wine-card {
+    background-color: #fff;
+    border-radius: 8px;
+    margin: 15px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.wine-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.wine-card img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.wine-card h3 {
+    font-size: 1.5rem;
+    margin: 15px 0;
+}
+
+.wine-card p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.wine-card .price {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #e76f51;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .wine-card {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    header nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+}

@@ -3,55 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Le Vin Immersif</title>
-    <link rel="stylesheet" href="/static/css/styles.css">
+    <title>Boutique de Vins</title>
+    <!-- Lien vers le fichier CSS -->
+    <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
-
-    <!-- Header avec menu de navigation -->
     <header>
-        <div class="logo">
-            <img src="/static/images/logo.png" alt="Logo du Vin Immersif" />
-        </div>
         <nav>
             <ul>
-                <li><a href="#home">Accueil</a></li>
-                <li><a href="#suggestions">Vins du mois</a></li>
-                <li><a href="#histoire">Histoire du vin</a></li>
-                <li><a href="#conception">Conception du vin</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#panier">Panier</a></li>
-                <li><a href="#compte">Compte</a></li>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#produits">Nos Vins</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Accueil -->
-    <section id="home">
+    <section id="accueil">
         <div class="intro">
-            <h1>Bienvenue dans l'univers du Vin Immersif</h1>
-            <p>Découvrez l'histoire, la conception et les vins qui vous ressemblent.</p>
+            <h1>Bienvenue à la Boutique de Vins</h1>
+            <p>Explorez notre sélection de vins fins, soigneusement choisis pour les amateurs comme les connaisseurs.</p>
         </div>
     </section>
 
-    <!-- Suggestions de vin dynamiques -->
-    <section id="suggestions">
-        <h2>Vins du Mois</h2>
-        <div id="wine-catalog" class="wine-catalog">
-            <!-- Les vins seront chargés ici en JS -->
+    <section id="produits">
+        <h2>Nos Vins</h2>
+        <div class="product-list">
+            {{range .}}
+            <div class="wine-card">
+                <h3>{{.Title}}</h3>
+                <p><strong>Points :</strong> {{.Points}}</p>
+                <p><strong>Prix :</strong> {{.Price}}€</p>
+                <p><strong>Région :</strong> {{.Region1}}, {{.Province}}</p>
+                <p><strong>Varieté :</strong> {{.Variety}}</p>
+                <p><strong>Winery :</strong> {{.Winery}}</p>
+                <p><strong>Description :</strong> {{.Description}}</p>
+            </div>
+            {{end}}
         </div>
     </section>
 
-    <!-- Histoire du vin -->
-    <section id="histoire">
-        <h2>L'Histoire du Vin</h2>
-        <img src="/static/images/history-wine.jpg" alt="Histoire du vin" class="section-image">
-        <p>Découvrez les origines du vin, son évolution au fil du temps et comment il est devenu une boisson raffinée.</p>
-    </section>
+    <footer>
+        <p>&copy; 2025 Boutique de Vins</p>
+    </footer>
 
-    <!-- Conception du vin -->
-    <section id="conception">
-        <h2>Conception du Vin</h2>
-        <img src="/static/images/wine-making.jpg" alt="Conception du vin" class="section-image">
-        <p>Apprenez comment le vin est fabriqué, de la vigne à la bouteille, et les différentes étapes de sa conception.</p>
-    </section>  
+    <!-- Lien vers le fichier JavaScript -->
+    <script src="/static/script.js"></script>
+</body>
+</html>
