@@ -6,8 +6,8 @@
 }
 
 body {
-  background-color: #f4f1e1;
-  color: #4a2c2a;
+  background-color: #f7f7f7;
+  color: #333;
 }
 
 header {
@@ -15,7 +15,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: #7a3b3a;
+  background-color: #8a2d1f; /* Bordeaux */
   color: white;
   position: fixed;
   top: 0;
@@ -24,15 +24,15 @@ header {
   z-index: 1000;
 }
 
-header .logo img {
-  width: 150px; /* Ajustez la taille du logo selon vos besoins */
-  height: auto;
+header .logo {
+  font-size: 24px;
+  font-weight: bold;
 }
 
 nav ul {
   list-style-type: none;
   display: flex;
-  gap: 20px;
+  gap: 30px;
 }
 
 nav ul li {
@@ -43,69 +43,91 @@ nav ul li a {
   color: white;
   text-decoration: none;
   font-size: 18px;
-  padding: 8px 15px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 12px 20px;
+  transition: all 0.3s ease;
 }
 
 nav ul li a:hover {
-  background-color: #b25a4d;
-  color: #fff;
+  background-color: #f1c27d; /* Or pâle au survol */
+  color: #8a2d1f;
   border-radius: 5px;
 }
 
 #home {
   height: 100vh;
-  background-image: url('wine-background.jpg'); /* Remplacez par l'image de fond */
+  background-image: url('wine-background.jpg');
   background-size: cover;
-  background-position: center center;
+  background-position: center;
   background-repeat: no-repeat;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  position: relative;
+}
+
+#home::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* Fond sombre transparent pour améliorer la lisibilité */
 }
 
 h1 {
-  font-size: 40px;
-  margin-bottom: 20px;
+  font-size: 48px;
 }
 
 p {
-  font-size: 20px;
+  font-size: 24px;
 }
 
 #wine-catalog {
   display: flex;
-  gap: 20px;
   justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.wine-item {
+  background-color: #fff;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border-radius: 8px;
 }
 
 .wine-item img {
   width: 100%;
   height: auto;
-  max-width: 250px;
+  border-radius: 8px;
 }
 
 .wine-item p {
+  margin-top: 10px;
   font-size: 16px;
-  text-align: center;
 }
 
 .wine-item button {
-  background-color: #7a3b3a;
+  background-color: #8a2d1f;
   color: white;
   border: none;
   padding: 10px;
   width: 100%;
   cursor: pointer;
+  border-radius: 5px;
+  margin-top: 15px;
 }
 
 .wine-item button:hover {
-  background-color: #b25a4d;
+  background-color: #f1c27d;
 }
 
-/* Style des images dans les sections */
 .section-image {
   max-width: 100%;
   height: auto;
@@ -114,11 +136,41 @@ p {
 }
 
 footer {
-  background-color: #7a3b3a;
+  background-color: #8a2d1f;
   color: white;
   text-align: center;
   padding: 20px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+  position: relative;
+  margin-top: 40px;
+}
+
+footer p {
+  margin: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form input, form textarea {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+form button {
+  background-color: #8a2d1f;
+  color: white;
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+form button:hover {
+  background-color: #f1c27d;
 }
