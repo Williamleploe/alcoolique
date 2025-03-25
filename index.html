@@ -1,42 +1,31 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Le Vin Immersif</title>
+    <title>Wine Catalog</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <!-- Header avec menu de navigation -->
     <header>
-        <div class="logo">
-            <img src="logo.png" alt="Logo du Vin Immersif">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="home.html" id="home-link">Accueil</a></li>
-                <li><a href="suggestions.html" id="suggestions-link">Vins du mois</a></li>
-                <li><a href="histoire.html" id="histoire-link">Histoire du vin</a></li>
-                <li><a href="conception.html" id="conception-link">Conception du vin</a></li>
-                <li><a href="contact.html" id="contact-link">Contact</a></li>
-                <li><a href="panier.html" id="panier-link">Panier</a></li>
-                <li><a href="compte.html" id="compte-link">Compte</a></li>
-            </ul>
-        </nav>
-        <div class="language-toggle">
-            <button id="language-switcher">Switch to English</button>
+        <div class="header-container">
+            <h1>Wine Catalog</h1>
+            <nav>
+                <a href="#" class="nav-link">Home</a>
+                <a href="#" class="nav-link">Catalog</a>
+                <a href="#" class="nav-link">Contact</a>
+            </nav>
         </div>
     </header>
 
     <main>
-        <h1>Bienvenue dans l'univers du Vin Immersif</h1>
-        <p>Découvrez nos suggestions et l'histoire fascinante du vin.</p>
+        <section class="catalog-container" id="wine-catalog">
+            <!-- Wine items will be dynamically loaded here -->
+        </section>
     </main>
 
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Le Vin Immersif | Tous droits réservés</p>
+        <p>&copy; 2025 Wine Catalog. All Rights Reserved.</p>
     </footer>
 
     <script src="script.js"></script>

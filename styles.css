@@ -1,148 +1,142 @@
+/* Reset default browser styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
 }
 
+/* Body styling */
 body {
-  background-color: #f4f1e1;
-  color: #4a2c2a;
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
 }
 
+/* Header section */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  background-color: #7a3b3a;
+  background-color: #4CAF50;
   color: white;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-}
-
-header .logo img {
-  width: 150px; /* Ajustez la taille du logo selon vos besoins */
-  height: auto;
-}
-
-nav ul {
-  list-style-type: none;
-  display: flex;
-  gap: 20px;
-}
-
-nav ul li {
-  margin: 0;
-}
-
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
-  padding: 8px 15px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-nav ul li a:hover {
-  background-color: #b25a4d;
-  color: #fff;
-  border-radius: 5px;
-}
-
-#home {
-  height: 100vh;
-  background-image: url('wine-background.jpg');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 20px 0;
   text-align: center;
-  padding-top: 80px; /* Added padding to avoid overlap with the fixed header */
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 h1 {
-  font-size: 40px;
-  margin-bottom: 20px;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
 }
 
-p {
-  font-size: 20px;
+nav {
+  margin-top: 10px;
 }
 
-#wine-catalog {
-  display: flex;
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  margin: 0 10px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: #333;
+  border-radius: 5px;
+}
+
+/* Main section */
+main {
+  padding: 40px 0;
+  background-color: white;
+}
+
+/* Wine Catalog Layout */
+.catalog-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 20px;
-  justify-content: center;
+  padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Wine item styling */
+.wine-item {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.wine-item:hover {
+  transform: translateY(-10px);
 }
 
 .wine-item img {
   width: 100%;
-  height: auto;
-  max-width: 250px;
+  height: 250px;
+  object-fit: cover;
+}
+
+.wine-item .wine-details {
+  padding: 20px;
+  text-align: center;
+}
+
+.wine-item h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
 }
 
 .wine-item p {
-  font-size: 16px;
-  text-align: center;
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+.wine-item .price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #e74c3c;
 }
 
 .wine-item button {
-  background-color: #7a3b3a;
+  background-color: #27ae60;
   color: white;
   border: none;
-  padding: 10px;
-  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
 }
 
 .wine-item button:hover {
-  background-color: #b25a4d;
+  background-color: #2ecc71;
 }
 
-/* Style des images dans les sections */
-.section-image {
-  max-width: 100%;
-  height: auto;
-  margin-top: 20px;
-  border-radius: 8px;
-}
-
+/* Footer styling */
 footer {
-  background-color: #7a3b3a;
+  background-color: #333;
   color: white;
   text-align: center;
-  padding: 20px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+  padding: 20px 0;
+  margin-top: 40px;
 }
 
-/* Responsive layout for smaller screens */
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-
-  #wine-catalog {
-    flex-direction: column;
-    align-items: center;
-  }
-
   .wine-item {
-    margin-bottom: 20px;
+      max-width: 100%;
   }
 }
