@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Your Cart</h1>
+
+    <ul id="cart-items">
+        {{ range .Items }} <!-- Loop over the Items in the cart -->
+        <li>
+            <h3>{{ .Title }}</h3>
+            <p><strong>Price:</strong> ${{ .Price }}</p>
+            <p><strong>Variety:</strong> {{ .Variety }}</p>
+            <p><strong>Winery:</strong> {{ .Winery }}</p>
+            <p><strong>Quantity:</strong> {{ .Quantity }}</p> <!-- Display Quantity -->
+
+            <p><strong>Total Price for this item:</strong> ${{ .TotalPrice }}</p> <!-- Total price for this item -->
+
+            <button onclick="removeItem('{{ .Title }}')">Remove One</button>
+        </li>
+        {{ end }}
+    </ul>
+
+    <!-- Display the total cost of all items in the cart -->
+    <h3>Total Cart Price: ${{ .TotalPrice }}</h3>
+
+    <button onclick="clearCart()">Clear All</button>
+    <button onclick="window.location.href='/'">Continue Shopping</button>
+
+    <script>
+        function removeItem(title) {
+            fetch("/remove-from-cart", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ title: title })
+            })
+            .then(response => {
+                if (response.ok) {
+                    location.reload(); // Refresh to update cart
+                } else {
+                    alert("Failed to remove item.");
+                }
+            })
+            .catch(error => console.error("Error removing item:", error));
+        }
+
+        function clearCart() {
+            fetch("/clear-cart", { method: "POST" })
+            .then(response => {
+                if (response.ok) {
+                    location.reload();
+                } else {
+                    alert("Failed to clear cart.");
+                }
+            })
+            .catch(error => console.error("Error clearing cart:", error));
+        }
+    </script>
+</body>
+</html>
