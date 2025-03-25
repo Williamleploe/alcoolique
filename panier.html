@@ -14,21 +14,22 @@
         </div>
         <nav>
             <ul>
-                <li><a href="home.html">Accueil</a></li>
-                <li><a href="suggestions.html">Vins du mois</a></li>
-                <li><a href="histoire.html">Histoire du vin</a></li>
-                <li><a href="conception.html">Conception du vin</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="panier.html">Panier</a></li>
-                <li><a href="compte.html">Compte</a></li>
+                <li><a href="home.html" id="home-link">Accueil</a></li>
+                <li><a href="suggestions.html" id="suggestions-link">Vins du mois</a></li>
+                <li><a href="histoire.html" id="histoire-link">Histoire du vin</a></li>
+                <li><a href="conception.html" id="conception-link">Conception du vin</a></li>
+                <li><a href="contact.html" id="contact-link">Contact</a></li>
+                <li><a href="panier.html" id="panier-link">Panier</a></li>
+                <li><a href="compte.html" id="compte-link">Compte</a></li>
+                <li><button id="language-switcher" onclick="toggleLanguage()">Switch to English</button></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="panier">
-            <h2 id="panier-title">Votre Panier</h2>
-            <div id="cart-display"></div>
+        <section id="cart">
+            <h2 id="cart-title">Votre Panier</h2>
+            <p id="cart-display">Votre panier est vide.</p>
         </section>
     </main>
 

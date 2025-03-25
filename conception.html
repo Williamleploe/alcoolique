@@ -1,23 +1,43 @@
-<!-- conception.html -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conception du Vin</title>
+    <title>Conception du Vin | Le Vin Immersif</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo du Vin Immersif">
+        </div>
         <nav>
             <ul>
-                <li><a href="index.html">Retour à l'accueil</a></li>
+                <li><a href="home.html" id="home-link">Accueil</a></li>
+                <li><a href="suggestions.html" id="suggestions-link">Vins du mois</a></li>
+                <li><a href="histoire.html" id="histoire-link">Histoire du vin</a></li>
+                <li><a href="conception.html" id="conception-link">Conception du vin</a></li>
+                <li><a href="contact.html" id="contact-link">Contact</a></li>
+                <li><a href="panier.html" id="panier-link">Panier</a></li>
+                <li><a href="compte.html" id="compte-link">Compte</a></li>
+                <li><button id="language-switcher" onclick="toggleLanguage()">Switch to English</button></li>
             </ul>
         </nav>
     </header>
-    <section id="conception">
-        <h2>La Conception du Vin</h2>
-        <p>Un regard détaillé sur le processus de vinification.</p>
-    </section>
+
+    <main>
+        <section id="conception">
+            <h2 id="conception-title">La Conception du Vin</h2>
+            <img src="winemaking-process.jpg" alt="Processus de vinification" class="section-image">
+            <p id="conception-text">Explorez chaque étape du processus de vinification, de la récolte des raisins à la fermentation, en passant par l'élevage en fûts de chêne.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Le Vin Immersif | Tous droits réservés</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

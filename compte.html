@@ -1,24 +1,100 @@
-
-<!-- compte.html -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Compte</title>
+    <title>Mon Compte | Le Vin Immersif</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo du Vin Immersif">
+        </div>
         <nav>
             <ul>
-                <li><a href="index.html">Retour à l'accueil</a></li>
+                <li><a href="home.html" id="home-link">Accueil</a></li>
+                <li><a href="suggestions.html" id="suggestions-link">Vins du mois</a></li>
+                <li><a href="histoire.html" id="histoire-link">Histoire du vin</a></li>
+                <li><a href="conception.html" id="conception-link">Conception du vin</a></li>
+                <li><a href="contact.html" id="contact-link">Contact</a></li>
+                <li><a href="panier.html" id="panier-link">Panier</a></li>
+                <li><a href="compte.html" id="compte-link">Compte</a></li>
+                <li><button id="language-switcher" onclick="toggleLanguage()">Switch to English</button></li>
             </ul>
         </nav>
     </header>
-    <section id="compte">
-        <h2>Mon Compte</h2>
-        <p>Gérez vos informations personnelles et commandes.</p>
-    </section>
+
+    <main>
+        <section id="compte">
+            <h2 id="compte-title">Mon Compte</h2>
+            
+            <!-- Account Information Section -->
+            <div id="account-info">
+                <h3>Informations Personnelles</h3>
+                <p><strong>Nom :</strong> John Doe</p>
+                <p><strong>Email :</strong> john.doe@example.com</p>
+                <p><strong>Adresse :</strong> 123 Rue des Vins, Paris, France</p>
+                <p><strong>Téléphone :</strong> +33 1 23 45 67 89</p>
+                <p><strong>Date d'inscription :</strong> 1er Janvier 2023</p>
+            </div>
+
+            <!-- Update Account Form -->
+            <div id="update-account">
+                <h3>Mettre à Jour Mes Informations</h3>
+                <form action="/update-account" method="POST">
+                    <label for="name">Nom :</label>
+                    <input type="text" id="name" name="name" value="John Doe" required><br>
+
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" name="email" value="john.doe@example.com" required><br>
+
+                    <label for="address">Adresse :</label>
+                    <input type="text" id="address" name="address" value="123 Rue des Vins, Paris, France" required><br>
+
+                    <label for="phone">Téléphone :</label>
+                    <input type="tel" id="phone" name="phone" value="+33 1 23 45 67 89" required><br>
+
+                    <button type="submit">Mettre à jour</button>
+                </form>
+            </div>
+
+            <!-- Order History Section -->
+            <div id="order-history">
+                <h3>Historique de Commandes</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Numéro de commande</th>
+                            <th>Date</th>
+                            <th>Total</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#12345</td>
+                            <td>15 Mars 2025</td>
+                            <td>€75.00</td>
+                            <td>Livré</td>
+                        </tr>
+                        <tr>
+                            <td>#12346</td>
+                            <td>1 Février 2025</td>
+                            <td>€50.00</td>
+                            <td>En cours</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Le Vin Immersif | Tous droits réservés</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
