@@ -55,7 +55,7 @@ nav ul li a:hover {
 
 #home {
   height: 100vh;
-  background-image: url('wine-background.jpg'); /* Remplacez par l'image de fond */
+  background-image: url('wine-background.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -64,6 +64,7 @@ nav ul li a:hover {
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding-top: 80px; /* Added padding to avoid overlap with the fixed header */
 }
 
 h1 {
@@ -121,4 +122,27 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  #wine-catalog {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .wine-item {
+    margin-bottom: 20px;
+  }
 }

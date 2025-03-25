@@ -11,75 +11,28 @@
     <!-- Header avec menu de navigation -->
     <header>
         <div class="logo">
-            <img src="logo.png" alt="Logo du Vin Immersif" /> <!-- Remplacez "logo.png" par votre logo -->
+            <img src="logo.png" alt="Logo du Vin Immersif">
         </div>
         <nav>
             <ul>
-                <li><a href="#home">Accueil</a></li>
-                <li><a href="#suggestions">Vins du mois</a></li>
-                <li><a href="#histoire">Histoire du vin</a></li>
-                <li><a href="#conception">Conception du vin</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#panier">Panier</a></li>
-                <li><a href="#compte">Compte</a></li>
+                <li><a href="home.html" id="home-link">Accueil</a></li>
+                <li><a href="suggestions.html" id="suggestions-link">Vins du mois</a></li>
+                <li><a href="histoire.html" id="histoire-link">Histoire du vin</a></li>
+                <li><a href="conception.html" id="conception-link">Conception du vin</a></li>
+                <li><a href="contact.html" id="contact-link">Contact</a></li>
+                <li><a href="panier.html" id="panier-link">Panier</a></li>
+                <li><a href="compte.html" id="compte-link">Compte</a></li>
             </ul>
         </nav>
+        <div class="language-toggle">
+            <button id="language-switcher">Switch to English</button>
+        </div>
     </header>
 
-    <!-- Accueil -->
-    <section id="home">
-        <div class="intro">
-            <h1>Bienvenue dans l'univers du Vin Immersif</h1>
-            <p>Découvrez l'histoire, la conception et les vins qui vous ressemblent.</p>
-        </div>
-    </section>
-
-    <!-- Suggestions de vin -->
-    <section id="suggestions">
-        <h2>Vins du Mois</h2>
-        <div class="wine-catalog">
-            <div class="wine-item">
-                <img src="wine1.jpg" alt="Vin 1">
-                <p>Vin d'exception 1</p>
-                <button>Ajouter au panier</button>
-            </div>
-            <div class="wine-item">
-                <img src="wine2.jpg" alt="Vin 2">
-                <p>Vin d'exception 2</p>
-                <button>Ajouter au panier</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Histoire du vin -->
-    <section id="histoire">
-        <h2>L'Histoire du Vin</h2>
-        <img src="history-wine.jpg" alt="Histoire du vin" class="section-image">
-        <p>Découvrez les origines du vin, son évolution au fil du temps et comment il est devenu une boisson raffinée.</p>
-    </section>
-
-    <!-- Conception du vin -->
-    <section id="conception">
-        <h2>La Conception du Vin</h2>
-        <img src="winemaking-process.jpg" alt="Processus de vinification" class="section-image">
-        <p>Un regard détaillé sur le processus de vinification, de la vigne à la bouteille.</p>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact">
-        <h2>Nous Contacter</h2>
-        <form>
-            <label for="name">Nom:</label>
-            <input type="text" id="name" name="name" required><br>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required><br>
-
-            <textarea id="message" name="message" placeholder="Votre message" required></textarea><br>
-
-            <button type="submit">Envoyer</button>
-        </form>
-    </section>
+    <main>
+        <h1>Bienvenue dans l'univers du Vin Immersif</h1>
+        <p>Découvrez nos suggestions et l'histoire fascinante du vin.</p>
+    </main>
 
     <!-- Footer -->
     <footer>
