@@ -5,27 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to the Wine Shop</title>
     <link rel="stylesheet" href="/static/styles.css">
+    <script defer src="/static/lang.js"></script> 
 </head>
 <body>
     <div class="header" style="background-color: #800000; padding: 20px; text-align: center;">
-        <h1 style="color: white;">Welcome to the Wine Shop</h1>
-        <button onclick="window.location.href='/history';">Our History</button>
-        <button onclick="window.location.href='/shop'" style="background-color: white; color: #800000; padding: 10px 20px; font-size: 18px; cursor: pointer;">
-            Vins
-            <button>
-            <button onclick="window.location.href='/sign'" style="background-color: white; color: #800000; padding: 10px 20px; font-size: 18px; cursor: pointer;">
-            Se connecter
-            <button onclick="window.location.href='/conception'" style="background-color: white; color: #800000; padding: 10px 20px; font-size: 18px; cursor: pointer;">
-            Conception
-            <button onclick="window.location.href='/contact'" style="background-color: white; color: #800000; padding: 10px 20px; font-size: 18px; cursor: pointer;">
-            Contact
-            <button onclick="window.location.href='/suggestions'" style="background-color: white; color: #800000; padding: 10px 20px; font-size: 18px; cursor: pointer;">
-            Suggestions
-            <button>
+        <h1 style="color: white;" id="welcome-text">Welcome to the Wine Shop</h1>
+
+        <button onclick="window.location.href='/history';" id="history-btn">Our History</button>
+        <button onclick="window.location.href='/shop';" id="shop-btn">Vins</button>
+        <button onclick="window.location.href='/sign';" id="sign-btn">Se connecter</button>
+        <button onclick="window.location.href='/conception';" id="conception-btn">Conception</button>
+        <button onclick="window.location.href='/contact';" id="contact-btn">Contact</button>
+        <button onclick="window.location.href='/suggestions';" id="suggestions-btn">Suggestions</button>
+
+        <!-- Language Switch -->
+        <button onclick="toggleLanguage()" id="lang-btn">🇫🇷 Français</button>
     </div>
 
     <footer style="text-align: center; padding: 20px;">
-        <p>Enjoy our exclusive selection of wines!</p>
+        <p id="footer-text">Enjoy our exclusive selection of wines!</p>
     </footer>
 </body>
 </html>
+

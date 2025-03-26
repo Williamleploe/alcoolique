@@ -13,6 +13,8 @@ import (
 // Wine struct
 // Wine struct with Quantity field
 // Wine struct with Quantity and TotalPrice field
+
+
 type Wine struct {
     Points      int     `json:"points"`
     Title       string  `json:"title"`
