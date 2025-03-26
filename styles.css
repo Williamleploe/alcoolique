@@ -1,0 +1,27 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+#wine-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.wine-card {
+  width: 200px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px;
+}
+
+#wine-list h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+#wine-list p {
+  font-size: 0.9em;
+}
