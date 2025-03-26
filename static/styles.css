@@ -76,3 +76,63 @@ button:hover {
 }
 
 
+
+/* Styles for the homepage */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+/* Bordeaux red banner */
+.banner {
+  background-color: #800020; /* Bordeaux red color */
+  color: white;
+  text-align: center;
+  padding: 50px 0;
+}
+
+.banner h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.banner p {
+  font-size: 1.25rem;
+  margin-top: 10px;
+}
+
+.shop-button {
+  display: inline-block;
+  padding: 15px 25px;
+  background-color: white;
+  color: #800020; /* Bordeaux red text */
+  font-size: 1.25rem;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  border: 2px solid #800020;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.shop-button:hover {
+  background-color: #800020;
+  color: white;
+}
+
+/* Main content */
+.content {
+  padding: 30px;
+  text-align: center;
+}
+
+.content h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.content p {
+  font-size: 1rem;
+  color: #555;
+}

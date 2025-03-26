@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vins du Mois | Le Vin Immersif</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="/static/logo.png" alt="Logo du Vin Immersif">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/accueil" id="home-link">Accueil</a></li>
+                <li><a href="/suggestions" id="suggestions">Vins du mois</a></li>
+                <li><a href="/history" id="histoire-link">Histoire du vin</a></li>
+                <li><a href="/conception" id="conception-">Conception du vin</a></li>
+                <li><a href="/contact" id="contact-link">Contact</a></li>
+                <li><a href="/panier" id="panier-link">Panier</a></li>
+                <li><a href="/sign" id="compte-link">Compte</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="suggestions">
+            <h2>Vins du Mois</h2>
+            <div class="wine-catalog" id="wine-catalog">
+                <!-- Wine items will be inserted dynamically via JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Le Vin Immersif | Tous droits réservés</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch("/wines")
+                .then(response => response.json())
+                .then(wines => {
+                    const catalog = document.getElementById("wine-catalog");
+
+                    wines.slice(0, 5).forEach(wine => {  // Display only 5 wines as "Wines of the Month"
+                        const wineElement = document.createElement("div");
+                        wineElement.classList.add("wine-item");
+                        wineElement.innerHTML = `
+                            <h3>${wine.title}</h3>
+                            <p><strong>Variety:</strong> ${wine.variety}</p>
+                            <p><strong>Region:</strong> ${wine.region_1}</p>
+                            <p><strong>Price:</strong> $${wine.price}</p>
+                        `;
+                        catalog.appendChild(wineElement);
+                    });
+                })
+                .catch(error => console.error("Error loading wines:", error));
+        });
+    </script>
+    <a href="/accueil">Back to Accueil</a>
+</body>
+</html>

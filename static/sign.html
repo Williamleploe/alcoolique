@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Sign In</h1>
+
+    <!-- Sign In Form -->
+    <form action="/signin" method="POST">
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email">
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required placeholder="Enter your password">
+        </div>
+        <button type="submit">Sign In</button>
+    </form>
+
+    <!-- Button to navigate to the Shop page -->
+    <button onclick="window.location.href='/shop'">Continue Shopping</button>
+    <button onclick="window.location.href='/accueil'">Back to Accueil</button>
+
+    <script>
+        // Add any additional JavaScript if needed
+    </script>
+</body>
+</html>

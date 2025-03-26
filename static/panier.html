@@ -29,7 +29,9 @@
     <h3>Total Cart Price: ${{ .TotalPrice }}</h3>
 
     <button onclick="clearCart()">Clear All</button>
-    <button onclick="window.location.href='/'">Continue Shopping</button>
+    
+    <!-- Updated "Continue Shopping" button to go to /shop -->
+    <button onclick="window.location.href='/shop'">Continue Shopping</button>
 
     <script>
         function removeItem(title) {
@@ -62,3 +64,4 @@
     </script>
 </body>
 </html>
+

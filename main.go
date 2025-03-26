@@ -64,6 +64,13 @@ func clearCart(w http.ResponseWriter, r *http.Request) {
     w.Write([]byte("Cart cleared"))
 }
 
+// Serve history page
+func serveHistory(w http.ResponseWriter, r *http.Request) {
+    log.Println("Serving history page at /history")
+    tmpl := template.Must(template.ParseFiles("static/history.html"))
+    tmpl.Execute(w, nil)
+}
+
 
 // Serve wines as JSON
 func serveWines(w http.ResponseWriter, r *http.Request) {
@@ -78,7 +85,7 @@ func serveWines(w http.ResponseWriter, r *http.Request) {
 
 // Serve index.html with wine data
 func serveHTML(w http.ResponseWriter, r *http.Request) {
-	tmpl := template.Must(template.ParseFiles("static/index.html"))
+	tmpl := template.Must(template.ParseFiles("static/accueil.html"))
 	wines, err := loadWines()
 	if err != nil {
 		http.Error(w, "Error loading wines", http.StatusInternalServerError)
@@ -187,19 +194,62 @@ func removeFromCart(w http.ResponseWriter, r *http.Request) {
     http.Error(w, "Item not found", http.StatusNotFound)
 }
 
+func serveAccueil(w http.ResponseWriter, r *http.Request) {
+    log.Println("Serving accueil page at /accueil")
+    tmpl := template.Must(template.ParseFiles("static/accueil.html"))
+    tmpl.Execute(w, nil)
+}
 
+// Serve the shop page (Shop.html)
+func serveShop(w http.ResponseWriter, r *http.Request) {
+    log.Println("Serving shop page at /shop")
+    tmpl := template.Must(template.ParseFiles("static/Shop.html")) // Make sure you rename index.html to Shop.html
+    tmpl.Execute(w, nil)
+}
+
+func serveSign(w http.ResponseWriter, r *http.Request) {
+    log.Println("Serving sign page at /sign")
+    tmpl := template.Must(template.ParseFiles("static/sign.html"))
+    tmpl.Execute(w, nil)
+}
+
+func serveConception(w http.ResponseWriter, r *http.Request) {
+	log.Println("Serving conception page at /conception")
+	tmpl := template.Must(template.ParseFiles("static/conception.html"))
+	tmpl.Execute(w, nil)
+}
+
+
+// Serve contact page (contact.html)
+func serveContact(w http.ResponseWriter, r *http.Request) {
+	log.Println("Serving contact page at /contact")
+	tmpl := template.Must(template.ParseFiles("static/contact.html"))
+	tmpl.Execute(w, nil)
+}
+
+func serveSuggestions(w http.ResponseWriter, r *http.Request) {
+	log.Println("Serving suggestions page at /suggestions")
+	tmpl := template.Must(template.ParseFiles("static/suggestions.html"))
+	tmpl.Execute(w, nil)
+}
 
 func main() {
     // Serve static files
     http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
-	http.HandleFunc("/wines", serveWines)
-	http.HandleFunc("/clear-cart", clearCart)  // Clear cart route
-	http.HandleFunc("/remove-from-cart", removeFromCart) // Remove one item
+    http.HandleFunc("/wines", serveWines)
+    http.HandleFunc("/clear-cart", clearCart)  // Clear cart route
+    http.HandleFunc("/remove-from-cart", removeFromCart) // Remove one item
+    http.HandleFunc("/accueil", serveAccueil)  // Serve accueil.html
+    http.HandleFunc("/shop", serveShop)        // Serve Shop.html (previously index.html)
+    http.HandleFunc("/panier", serveCart)      // Serve panier.html
+    http.HandleFunc("/sign", serveSign)        // Serve sign.html (new route)
+	http.HandleFunc("/conception", serveConception)
+	http.HandleFunc("/history", serveHistory)
+	http.HandleFunc("/contact", serveContact)
+	http.HandleFunc("/suggestions", serveSuggestions) 
+    // Define other routes
 
-
-    // Define routes
     http.HandleFunc("/", serveHTML)          // Home page route (index.html)
-    http.HandleFunc("/panier", serveCart)    // Cart page route (panier.html)
     http.HandleFunc("/add-to-cart", addToCart) // Add to cart route
 
     fmt.Println("Server running at http://localhost:9090")
