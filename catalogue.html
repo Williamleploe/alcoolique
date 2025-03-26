@@ -83,11 +83,36 @@
       border: none;
       border-radius: 5px;
     }
+
+    /* Navigation Bar Styles */
+    header {
+      background-color: #333;
+      padding: 10px 0;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 8px 16px;
+      border-radius: 5px;
+    }
+
+    nav a:hover {
+      background-color: #f4a261;
+      color: white;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Header or navigation bar -->
+  <!-- Header with Navigation Bar -->
   <header>
     <nav>
       <a href="index.html">Home</a>
@@ -115,10 +140,16 @@
       <div id="cart-items">
         <p>Your cart is empty</p> <!-- Default message when empty -->
       </div>
+      <!-- Total Price -->
+      <div id="total-price">
+        <p>Total: $0.00</p> <!-- Default total price when empty -->
+      </div>
       <button onclick="closeCart()">Close Cart</button>
       <button class="clear-cart" onclick="clearCart()">Clear All</button> <!-- Clear All Button -->
     </div>
   </div>
+
+  <!-- Add any JavaScript files here -->
 
   <!-- Add any JavaScript files here -->
   <script>
@@ -310,11 +341,15 @@
     // Cart data stored in localStorage or sessionStorage
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-    // Function to update cart button count
-    function updateCartCount() {
+    // Function to update cart button count and total
+    function updateCartCountAndTotal() {
       const cartCount = document.getElementById('cart-item-count');
       const cartItems = cart.length;
+      const totalPriceElement = document.getElementById('total-price').querySelector('p');
+
       cartCount.textContent = cartItems > 0 ? `(${cartItems})` : '0';  // Show 0 if empty
+      const totalPrice = cart.reduce((total, item) => total + item.price, 0).toFixed(2);
+      totalPriceElement.textContent = `Total: $${totalPrice}`;
     }
 
     // Toggle cart visibility
@@ -330,6 +365,7 @@
         cartItemsContainer.innerHTML = cart.map(item => 
           `<p>${item.title} - $${item.price}</p>`).join('');
       }
+      updateCartCountAndTotal();
     }
 
     // Close cart modal
@@ -338,27 +374,20 @@
       cartModal.style.display = 'none';
     }
 
-    // The old style addToCart function
+    // Add item to the cart
     function addToCart(wineTitle, winePrice) {
-      // Add item to cart
       const wine = { title: wineTitle, price: winePrice };
-
-      // Add wine to the cart array
       cart.push(wine);
-
-      // Store the cart array in localStorage
       localStorage.setItem('cart', JSON.stringify(cart));
-
-      // Update the cart button count
-      updateCartCount();
+      updateCartCountAndTotal();
     }
 
     // Clear all items from the cart
     function clearCart() {
-      cart = []; // Empty the cart array
-      localStorage.setItem('cart', JSON.stringify(cart)); // Update localStorage
-      updateCartCount(); // Update the cart count in the button
-      toggleCart(); // Close the cart modal after clearing
+      cart = [];
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateCartCountAndTotal();
+      toggleCart();
     }
 
     // Display wines in catalogue
@@ -367,18 +396,16 @@
       productsSection.innerHTML = wines.map(wine => `
         <div class="product">
           <h3>${wine.title}</h3>
-          <p><strong>Variety:</strong> ${wine.variety}</p>
-          <p><strong>Winery:</strong> ${wine.winery}</p>
-          <p><strong>Description:</strong> ${wine.description}</p>
           <p><strong>Price:</strong> $${wine.price}</p>
+          <p><strong>Description:</strong> ${wine.description}</p>
           <button class="add-to-cart" onclick="addToCart('${wine.title}', ${wine.price})">Add to Cart</button>
         </div>
       `).join('');
     }
 
-    // Initialize cart button on page load
-    updateCartCount();
-    displayWines(); // Display wines when the page loads
+    // Initialize cart button and wines display
+    updateCartCountAndTotal();
+    displayWines();
   </script>
 
 </body>
